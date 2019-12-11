@@ -1,0 +1,15 @@
+{
+  "name": "passwordvalidator",
+  "version": "1.0.0",
+  "description": "Password validation app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+    
+  "author": "dSelhime",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>Password Validator</title>
+  </head>
+  <body>
+    <h1>Password Validator</h1>
+    <h2>Please create your password</h2>
+    <div class="validation-box">
+      <h3>Password must contain the following:</h3>
+      <ul class="validation-list">
+        <li class="invalid length">Minimum of 8 characters</li>
+        <li class="invalid number">Contain at least 1 number</li>
+        <li class="invalid character">Contain at least 1 special character</li>
+      </ul>
+    </div>
+    <div class="is-valid"></div>
+    <form action="createPassword" method="POST">
+      <label for="password">
+          <input type="password" name="password" id="password" placeholder="password"/>
+      </label>
+      <button id="submit">Validate</button>
+    </form>
+    <script src="JS/validate.js"></script>
+  </body>
+</html>
