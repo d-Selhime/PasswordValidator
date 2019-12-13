@@ -5,3 +5,7 @@
 .is-valid {
     color: #1ac32a;
 }
+
+#password:after {
+    content: "J"
+}
