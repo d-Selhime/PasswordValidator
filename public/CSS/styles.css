@@ -1,11 +1,73 @@
 
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
 .invalid {
     color:#cf0000;
 }
 .is-valid {
     color: #1ac32a;
 }
+.validation-box {
+   height: 0;
+   opacity: 0;
+   overflow: hidden;
+  
+}
+.validate-box {
+    height: auto;
+    opacity: 1;
+    overflow: initial;
+    transition: ease-in 0.3s;
+    font-size: 130%;
+}
+.form-container {
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+button {
+    cursor: pointer;
+}
 
-#password:after {
-    content: "J"
+#reset {
+    margin-left: 4rem;
+}
+input {
+    width: 20rem;
+    height: 3rem;
+    margin-right: -3.5rem;
+}
+.icon {
+    background-color: #fff;
+    outline: none;
+    border:none;
+    height: .1rem;
+ 
+
+}
+.eyeIcons {
+    width: 1.75rem;
+    height: 1.75rem;
+   padding-top: 5px;
+    background-color: transparent;
+    cursor: pointer;
+}
+.icon__eye-off.is-active { 
+    display: block;
+}
+.icon__eye-off.is-hidden {
+    display: none;
+}
+.icon__eye-on.is-active{
+    display: block;
+}
+.icon__eye-on.is-hidden{
+    display: none;
 }
