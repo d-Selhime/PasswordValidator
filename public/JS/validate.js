@@ -8,14 +8,18 @@ let characters = document.querySelector('.character');
 let length = document.querySelector('.length');
 let number = document.querySelector('.number');
 
+const eyeOff = document.querySelector('.icon__eye-off')
+const eyeOn = document.querySelector('.icon__eye-on')
+
 
 // initially hide validation box and show onfocus 
-pwdInput.onfocus = function() {
+const check = pwdInput.onfocus = function() {
     validationBox.classList.remove('validation-box')
     validationBox.classList.add('validate-box')
 };
 // When user types into input check for a min of 8 characters
 const valid = pwdInput.onkeyup = () => { 
+
  if (pwdInput.value.length >= 8) {
      length.classList.remove('invalid')
      length.classList.add('is-valid')
@@ -37,34 +41,37 @@ let specChar = /[!@#$%^&*(),.?":{}|<>]/g;
 //clear input on button click
 const clearInput = document.getElementById('reset').addEventListener('click', function () {
     pwdInput.value = ""
-    
+    length.classList.add('invalid')
+    length.classList.remove('is-valid')
+
+    number.classList.add('invalid')
+    number.classList.remove('is-valid')
+
+    characters.classList.add('invalid')
+    characters.classList.remove('is-valid')
 })
 
 //show password on eye click
-// const eyeIcon = document.querySelector('.eyeIcons')
+
 const icons = document.querySelector('.icon')
 icons.addEventListener('click', function () {
-    const eyeOff = document.querySelector('.icon__eye-off')
-    const eyeOn = document.querySelector('.icon__eye-on')
-    
-  console.log('button clicked');
-  eyeOff.classList.remove('is-active')
-  eyeOff.classList.add('is-hidden')
-   if (eyeOff.classList.contains('is-hidden')) {
-       eyeOn.classList.add('is-active')
-       pwdInput.removeAttribute('type')
-   } else  {
-       //not working
-        eyeOn.classList.remove('is-active')
-        eyeOn.classList.add('is-hidden')
-        eyeOff.classList.add('is-active')
-        pwdInput.setAttribute('type', 'password')
-   }
-
-
    
+  console.log('button clicked');
 
-// pwdInput.removeAttribute(type)
-
-
+eyeOn.classList.toggle('is-hidden')
+    pwdInput.setAttribute('type', 'password')
+eyeOff.classList.toggle( 'is-hidden')
+    pwdInput.removeAttribute('type', 'password')
 })
+
+icons.addEventListener('click', () => {
+    
+    if (eyeOff.classList.contains('is-active')) {
+        pwdInput.setAttribute('type', 'password')
+    } else if  (eyeOn.classList.contains('is-hidden')) {
+        pwdInput.removeAttribute('type', 'password')
+    } else {
+        return
+    }
+})
+

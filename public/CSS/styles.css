@@ -27,6 +27,9 @@ html {
     transition: ease-in 0.3s;
     font-size: 130%;
 }
+.length.is-valid::after, .number.is-valid::after, .character.is-valid::after {
+    content: '   \2713';
+}
 .form-container {
     display: flex;
     justify-content: stretch;
@@ -40,17 +43,14 @@ button {
     margin-left: 4rem;
 }
 input {
-    width: 20rem;
+    width: 25rem;
     height: 3rem;
-    margin-right: -3.5rem;
+    margin-right: -4rem;
 }
 .icon {
     background-color: #fff;
     outline: none;
     border:none;
-    height: .1rem;
- 
-
 }
 .eyeIcons {
     width: 1.75rem;
@@ -59,15 +59,9 @@ input {
     background-color: transparent;
     cursor: pointer;
 }
-.icon__eye-off.is-active { 
+.is-active { 
     display: block;
 }
-.icon__eye-off.is-hidden {
-    display: none;
-}
-.icon__eye-on.is-active{
-    display: block;
-}
-.icon__eye-on.is-hidden{
+.is-hidden {
     display: none;
 }
